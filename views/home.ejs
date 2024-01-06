@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>My contact list </h1>
+    <div>
+        <ul>
+            <% for(let i of contact_list){ %>
+                <li>
+                    <p>
+                        <%= i.name %>
+                    </p>
+                    <p>
+                        <%= i.number %>
+                    </p>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+    <form action="/create-contact" method="POST">
+        <div style="display: flex; justify-content: space-between;width: 220px; margin-bottom: 20px;">
+            <label for="name" >Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div style="display: flex; justify-content: space-between;width: 220px; margin-bottom: 20px;">
+            <label for="number">Number</label>
+            <input type="number" name="number" id="number" required>
+        </div>
+        <button type="submit" >Add contact</button>
+    </form>
+</body>
+
+</html>
