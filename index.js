@@ -36,9 +36,14 @@ app.get("/about", (req, res) => {
   });
 });
 
+app.get("/delete-contact/:id", (req, res) => {
+  contactList = contactList.filter((e) => e.name !== req.params.id);
+  return res.redirect("back");
+});
+
 app.post("/create-contact", (req, res) => {
-    contactList.push(req.body);
-    return res.redirect('back')
+  contactList.push(req.body);
+  return res.redirect("back");
 });
 
 app.listen(8000, (err) => {
