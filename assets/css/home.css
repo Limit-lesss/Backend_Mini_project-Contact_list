@@ -37,20 +37,13 @@ ul li {
     color: rgb(47, 46, 46);
     font-size: 20px;
 }
-.name{
+
+.name {
     width: 200px;
 }
 
-.delete-contact{
-    display: none;
-}
-
 ul li:hover {
-    background-color: rgba(215, 191, 10, 0.865);
-}
-
-ul li:hover .delete-contact {
-    display: inline-block;
+    background-color: rgba(167, 232, 81, 0.865);
 }
 
 form input {
