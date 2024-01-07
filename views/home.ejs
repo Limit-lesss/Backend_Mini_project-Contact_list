@@ -4,42 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--! our css should be below all other styles so that we can override it -->
+    <link rel="stylesheet" href="/css/home.css">
     <title>
         <%= title %>
     </title>
 </head>
 
 <body>
-    <h1>My contact list </h1>
-    <div>
+    <h1 class="contact-header">
+        <img width="48" height="48"
+            src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/48/707171/external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah.png"
+            alt="external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah" />My Contacts List
+    </h1>
+    <div class="contact-body">
         <ul>
-            <% for(let i of contact_list){ %>
+            <% for(let i=0 ; i < contact_list.length ; i++){ %>
                 <li>
-                    <p>
-                        <%= i.name %>
+                    <p class="name">
+                        <%= contact_list[i].name %>
                     </p>
-                    <p>
-                        <%= i.number %>
+                    <p class="number">
+                        <%= contact_list[i].number %>
                     </p>
-                    
-                    <form action="/delete-contact/<%= i.name %>" method="GET">
+                    <a class="delete-contact" href="/delete-contact/<%= i %>"><img width="30" height="30"
+                            src="https://img.icons8.com/carbon-copy/100/181919/filled-trash.png"
+                            alt="filled-trash" /></a>
+                    <!-- <form action="/delete-contact/<%= i.name %>" method="GET">
                         <input type="submit" value="Delete">
-                    </form>
+                    </form> -->
                 </li>
                 <% } %>
         </ul>
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="number" name="number" id="number" placeholder="Phone number" required>
+            <button type="submit">Add</button>
+        </form>
     </div>
-    <form action="/create-contact" method="POST">
-        <div style="display: flex; justify-content: space-between;width: 220px; margin-bottom: 20px;">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required>
-        </div>
-        <div style="display: flex; justify-content: space-between;width: 220px; margin-bottom: 20px;">
-            <label for="number">Number</label>
-            <input type="number" name="number" id="number" required>
-        </div>
-        <button type="submit">Add contact</button>
-    </form>
+
 </body>
 
 </html>

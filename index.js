@@ -7,15 +7,28 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded());
+app.use(express.static("assets"));
+// //!middleware1
+// app.use((req, res, next) => {
+//   req.myName = "Aarav";
+//   // console.log("middleware 1 is called!");
+//   next();
+// });
+// //!middleware2
+// app.use((req, res, next) => {
+//   console.log(`My name is from MW2 ${req.myName}`);
+//   // console.log("middleware 2 is called!");
+//   next();
+// });
 
 let contactList = [
   {
     name: "Aarav",
-    number: "82838283828",
+    number: "8283828382",
   },
   {
     name: "Anurag",
-    number: "42232134134131",
+    number: "7676987698",
   },
   {
     name: "Piddi",
@@ -37,7 +50,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/delete-contact/:id", (req, res) => {
-  contactList = contactList.filter((e) => e.name !== req.params.id);
+  contactList.splice(parseInt(req.params.id), 1);
   return res.redirect("back");
 });
 
