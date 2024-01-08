@@ -2,6 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+     background-color: rgba(1, 16, 34, 0.926);
+    /* background-image: url("https://www.jsmastery.pro/assets/notFound/icons/texture-animated.svg"); */
+    /* background-repeat: no-repeat; */
+    /* background-position:bottom;
+    background-size:contain; */ 
 }
 
 .contact-header {
@@ -9,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: gray;
+    color: #cccccc;
     font-size: 40px;
 }
 
@@ -42,8 +47,13 @@ ul li {
     width: 200px;
 }
 
+.dogDiv {
+    display: flex;
+    justify-content: center;
+}
+
 ul li:hover {
-    background-color: rgba(167, 232, 81, 0.865);
+    background-color: rgb(215, 243, 253);
 }
 
 form input {
@@ -53,11 +63,12 @@ form input {
     border-bottom: 1px solid gray;
     font-size: 15px;
     width: 200px;
+    padding-left: 5px;
 }
 
 form button {
-    padding: 7px 10px;
-    background-color: gray;
+    padding: 8px 10px;
+    background-color: rgb(33, 54, 54);
     color: white;
     border: none;
     font-weight: bold;

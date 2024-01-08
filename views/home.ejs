@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1 class="contact-header">
+    <!-- <h1 class="contact-header">
         <img width="48" height="48"
             src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/48/707171/external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah.png"
             alt="external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah" />My Contacts List
@@ -28,12 +28,11 @@
                         <%= contact_list[i].number %>
                     </p>
                     <a class="delete-contact" href="/delete-contact/<%= i %>"><img width="30" height="30"
-                            src="https://img.icons8.com/small/64/606262/filled-trash.png"
-                            alt="filled-trash" /></a>
-                    <!-- <form action="/delete-contact/<%= i.name %>" method="GET">
+                            src="https://img.icons8.com/small/64/606262/filled-trash.png" alt="filled-trash" /></a>
+                    <form action="/delete-contact/<%= i.name %>" method="GET">
                         <input type="submit" value="Delete">
                     </form> -->
-                </li>
+    <!-- </li>
                 <% } %>
         </ul>
         <form action="/create-contact" method="POST">
@@ -41,8 +40,52 @@
             <input type="number" name="number" id="number" placeholder="Phone number" required>
             <button type="submit">Add</button>
         </form>
+    </div> -->
+    <!-- <div class="dogDiv"> <img id="dog-img" width="900px" height="500px"></div> -->
+    <div style="display: flex;height: 100vh;position: relative;">
+        <div
+            style="width: 50%; background-image: url('https://www.jsmastery.pro/assets/notFound/icons/texture-animated.svg'); opacity: .3;">
+        </div>
+        <div
+            style="width: 50%;background-image: url('https://www.jsmastery.pro/assets/notFound/icons/texture-animated.svg'); opacity: .2;">
+        </div>
+        <div style="position: absolute; top: 5%; left: 30%;">
+            <h1 class="contact-header">
+                <img width="48" height="48"
+                    src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/48/D9DCDC/external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah.png"
+                    alt="external-contact-list-social-media-ui-tanah-basah-basic-outline-tanah-basah" />My Contacts List
+            </h1>
+            <div class="contact-body">
+                <ul>
+                    <% for(let i=0 ; i < contact_list.length ; i++){ %>
+                        <li>
+                            <p class="name">
+                                <%= contact_list[i].name %>
+                            </p>
+                            <p class="number">
+                                <%= contact_list[i].number %>
+                            </p>
+                            <a class="delete-contact" href="/delete-contact/<%= i %>"><img width="30" height="30"
+                                    src="https://img.icons8.com/small/64/606262/filled-trash.png"
+                                    alt="filled-trash" /></a>
+                            <!-- <form action="/delete-contact/<%= i.name %>" method="GET">
+                                <input type="submit" value="Delete">
+                            </form> -->
+                        </li>
+                        <% } %>
+                </ul>
+                <form action="/create-contact" method="POST">
+                    <input type="text" name="name" id="name" placeholder="Name" required
+                        style="height: 30px; border-radius: 5px;">
+                    <input type="number" name="number" id="number" placeholder="Phone number" required
+                        style="height: 30px; border-radius: 5px;">
+                    <button type="submit" >Add</button>
+                </form>
+            </div>
+            <!-- <div class="dogDiv"> <img id="dog-img" width="900px" height="500px"></div>
+        </div>
     </div>
-
+    <script src="/js/home.js"></script>
 </body>
 
 </html>
