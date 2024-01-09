@@ -57,15 +57,15 @@
             </h1>
             <div class="contact-body">
                 <ul>
-                    <% for(let i=0 ; i < contact_list.length ; i++){ %>
+                    <% for(let i of contact_list){ %>
                         <li>
                             <p class="name">
-                                <%= contact_list[i].name %>
+                                <%= i.name %>
                             </p>
                             <p class="number">
-                                <%= contact_list[i].number %>
+                                <%= i.number %>
                             </p>
-                            <a class="delete-contact" href="/delete-contact/<%= i %>"><img width="30" height="30"
+                            <a class="delete-contact" href="/delete-contact/<%= i._id %>"><img width="30" height="30"
                                     src="https://img.icons8.com/small/64/606262/filled-trash.png"
                                     alt="filled-trash" /></a>
                             <!-- <form action="/delete-contact/<%= i.name %>" method="GET">

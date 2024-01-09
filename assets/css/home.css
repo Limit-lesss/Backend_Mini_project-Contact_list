@@ -21,11 +21,11 @@ body {
 .contact-body {
     width: fit-content;
     margin: auto;
-
 }
 
 ul {
-    padding: 0 10px;
+    padding-left: 0px;
+    padding-right:15px;
     margin-bottom: 20px;
     max-height: 400px;
     overflow: scroll;
@@ -38,7 +38,7 @@ ul li {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3px;
-    background-color: rgb(238, 224, 174);
+    background-color: rgb(215, 243, 253);
     color: rgb(47, 46, 46);
     font-size: 20px;
 }
@@ -53,7 +53,7 @@ ul li {
 }
 
 ul li:hover {
-    background-color: rgb(215, 243, 253);
+    background-color: rgb(154, 242, 245);
 }
 
 form input {
